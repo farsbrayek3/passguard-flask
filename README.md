@@ -1,6 +1,6 @@
 # PassGuard – Modern Flask Password Manager
 
-![PassGuard Logo](https://cdn-icons-png.flaticon.com/512/3064/3064197.png)
+<img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="PassGuard Logo" height="48" />
 
 A beautifully designed, modern, and secure password manager built with Flask, SQLAlchemy, Flask-Login, and Tailwind CSS.  
 Manage your secrets and credentials with confidence—your data is encrypted, and only you have access.

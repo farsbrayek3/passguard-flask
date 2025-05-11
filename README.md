@@ -33,7 +33,7 @@ Manage your secrets and credentials with confidence—your data is encrypted, an
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/passguard-flask.git
+git clone https://github.com/farsbrayek3/passguard-flask.git
 cd passguard-flask
 ```
 

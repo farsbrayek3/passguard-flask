@@ -22,9 +22,9 @@ Manage your secrets and credentials with confidence—your data is encrypted, an
 
 ## 🖼️ Screenshots
 
-![Landing Page](https://i.imgur.com/hTQ0z9G.png)
-![Dashboard](https://i.imgur.com/1pB1QoC.png)
-![Add Password](https://i.imgur.com/TYXyXgA.png)
+![Landing Page](https://img001.prntscr.com/file/img001/jGgUsQl9QhOduTxVHXrhEA.png)
+![Dashboard](https://img001.prntscr.com/file/img001/VyQK1FrYRgGKIgEm7TXagw.png)
+![Add Password](https://img001.prntscr.com/file/img001/A3InThfAQe6-ZkboleuoTg.png)
 
 ---
 

@@ -25,7 +25,7 @@ Now with **Face Registration & Login** for an extra layer of convenience and sec
 ## 🖼️ Screenshots
 
 ![Landing Page](https://img001.prntscr.com/file/img001/jGgUsQl9QhOduTxVHXrhEA.png)
-![Dashboard](https://img001.prntscr.com/file/img001/VyQK1FrYRgGKIgEm7TXagw.png)
+![Dashboard](https://img001.prntscr.com/file/img001/23N3dGd5SwSyXgK4HY8U-g.png)
 ![Add Password](https://img001.prntscr.com/file/img001/A3InThfAQe6-ZkboleuoTg.png)
 ![Face Login Page](https://img001.prntscr.com/file/img001/KPjxsBTkQHmDzoSFJ-TTZQ.png)
 

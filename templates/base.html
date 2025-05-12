@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js for Drawer -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
     <link
       rel="icon"
       href="https://cdn-icons-png.flaticon.com/512/3064/3064197.png"
@@ -13,9 +18,10 @@
   </head>
   <body class="bg-gradient-to-br from-blue-50 to-purple-200 min-h-screen">
     <nav
-      class="bg-white shadow-md py-4 px-8 flex justify-between items-center mb-8"
+      class="bg-white shadow-md py-4 px-4 sm:px-8 flex justify-between items-center mb-8 relative"
+      x-data="{ open: false }"
     >
-      <div>
+      <div class="flex items-center gap-2">
         <a
           href="{{ url_for('index') }}"
           class="text-2xl font-bold text-blue-600 flex items-center gap-2"
@@ -28,7 +34,8 @@
           PassGuard
         </a>
       </div>
-      <div class="flex gap-4">
+      <!-- Desktop Nav -->
+      <div class="hidden sm:flex gap-4 items-center">
         {% if current_user.is_authenticated %}
         <a
           href="{{ url_for('dashboard') }}"
@@ -58,9 +65,93 @@
         >
         {% endif %}
       </div>
+      <!-- Hamburger for Mobile -->
+      <button @click="open = true" class="sm:hidden focus:outline-none">
+        <svg
+          class="w-8 h-8 text-blue-600"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+      <!-- Drawer -->
+      <div
+        class="fixed inset-0 z-50 flex"
+        x-show="open"
+        x-transition:enter="transition ease-out duration-200"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-100"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        style="display: none"
+      >
+        <div
+          class="fixed inset-0 bg-black bg-opacity-40"
+          @click="open = false"
+        ></div>
+        <aside
+          class="relative bg-white w-64 max-w-full h-full shadow-xl p-6 flex flex-col gap-6"
+          @click.away="open = false"
+        >
+          <div class="flex items-center justify-between mb-6">
+            <span class="text-xl font-bold text-blue-600">Menu</span>
+            <button @click="open = false" class="focus:outline-none">
+              <svg
+                class="w-7 h-7 text-blue-600"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          {% if current_user.is_authenticated %}
+          <a
+            href="{{ url_for('dashboard') }}"
+            class="text-blue-700 font-semibold hover:underline"
+            >Dashboard</a
+          >
+          <a
+            href="{{ url_for('add_password') }}"
+            class="text-blue-700 font-semibold hover:underline"
+            >Add Password</a
+          >
+          <a
+            href="{{ url_for('logout') }}"
+            class="text-white bg-blue-600 px-4 py-2 rounded hover:bg-blue-700 transition text-center"
+            >Logout</a
+          >
+          {% else %}
+          <a
+            href="{{ url_for('login') }}"
+            class="text-blue-700 font-semibold hover:underline"
+            >Login</a
+          >
+          <a
+            href="{{ url_for('register') }}"
+            class="text-blue-700 font-semibold hover:underline"
+            >Register</a
+          >
+          {% endif %}
+        </aside>
+      </div>
     </nav>
 
-    <div class="max-w-3xl mx-auto">
+    <div class="w-full max-w-3xl mx-auto px-2 sm:px-4">
       {% with messages = get_flashed_messages(with_categories=true) %} {% if
       messages %}
       <div class="mb-4">

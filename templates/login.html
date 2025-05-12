@@ -29,10 +29,22 @@
     </button>
   </form>
   <div class="mt-6 text-center text-gray-500">
-    New here?
-    <a href="{{ url_for('register') }}" class="text-blue-600 hover:underline"
-      >Create account</a
-    >
+    <div>
+      <form action="{{ url_for('login_with_face') }}" method="get">
+        <button
+          type="submit"
+          class="w-full bg-green-600 text-white px-5 py-2 mt-3 rounded font-semibold hover:bg-green-700 transition"
+        >
+          Login with Face
+        </button>
+      </form>
+    </div>
+    <span class="block mt-2">
+      New here?
+      <a href="{{ url_for('register') }}" class="text-blue-600 hover:underline"
+        >Create account</a
+      >
+    </span>
   </div>
 </div>
 {% endblock %}

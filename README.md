@@ -27,7 +27,7 @@ Now with **Face Registration & Login** for an extra layer of convenience and sec
 ![Landing Page](https://img001.prntscr.com/file/img001/jGgUsQl9QhOduTxVHXrhEA.png)
 ![Dashboard](https://img001.prntscr.com/file/img001/VyQK1FrYRgGKIgEm7TXagw.png)
 ![Add Password](https://img001.prntscr.com/file/img001/A3InThfAQe6-ZkboleuoTg.png)
-![Face Login Page](https://img001.prntscr.com/file/img001/your-new-face-login-screenshot.png)
+![Face Login Page](https://img001.prntscr.com/file/img001/KPjxsBTkQHmDzoSFJ-TTZQ.png)
 
 ---
 
@@ -56,7 +56,21 @@ pip install -r requirements.txt
 ### 4. Run the app
 
 ```bash
-python app.py
+python app.py 
+```
+
+## if you dont have a camera in ur pc use 
+
+### 1. Start your Flask server like this:
+
+```bash
+flask run --host=0.0.0.0
+```
+
+### 2. On your phone, open a browser and go to
+
+```bash
+http://192.168.X.X:5000/register_face
 ```
 
 **The app will be available at** [http://127.0.0.1:5000](http://127.0.0.1:5000)
